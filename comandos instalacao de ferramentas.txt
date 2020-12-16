@@ -1,0 +1,19 @@
+Pacotes para Instalar
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+# String de conexão com banco de dados
+@"Server=(localdb)\mssqllocaldb;Database=Cursmvc;Integrated Security=True"
+
+
+Add-Migration InitialCreate
+Update-Database
+
+
+
+-------
+API Swagger
+app.UseSwagger();
+app.UseSwaggerUI(c => {c.SwaggerEndpoint("/swagger/v1/swagger.json", "CursoAPI"); });
+
+services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "CursoAPI", Version = "v1"}); });
